@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>success</title>
+    <style type="text/css">
+       body{
+           background-color: azure;
+           width: 1024px;
+           margin: auto;
+       }
+       .ThStyle{
+           padding-left: 20px;
+           padding-top: 10px;
+           border-collapse: collapse;
+       }
+       /*涉及静态资源的访问问题；springboot  默认配置映射的/**映射到/static ,故在拷贝到图片的相对路径之后应该将
+       他的前面的/static删除  最终静态资源无法访问的问题就得以解决；*/
+        header{
+            background-image: url("/images/topnav.png");
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <header>
+        <img src="/images/headerBg.png" style="height:auto;width: 1024px">
+        <nav>
+            &nbsp;<a th:href="@{/MainPage/}" style="color: aliceblue">首页</a>
+            <a th:href="@{/Management/}" style="color: aliceblue">还书</a>
+            <a th:href="@{/About/}" style="color: aliceblue">关于</a>
+            &nbsp; <a href="" style="float: right;color: aliceblue">注销</a>
+        </nav>
+        <hr>
+    </header>
+    <div style="float: left;">
+        <fieldset style="width: 200px;height: 150px; text-align: center;margin-right: 20px;background-color: #FCE000;border-radius: 4px;">
+            <legend>个人信息</legend>
+            <div style="margin-top: 40px"></div>
+            <span>Null</span>
+            <table style="margin-top: 10px">
+                <tr>
+                    <th style="padding-left: 30px">借阅数:</th><th>5</th><th>待还数:</th><th>2</th>
+                </tr>
+            </table>
+        </fieldset>
+        <div>
+            <fieldset style="width:200px;background-color:#0375B4;height: 60px;text-align: center;float: left;border-radius: 4px;">
+                <legend>搜索</legend>
+                <form method="get"th:action="@{/MainPage/Search}">
+                    <table>
+                    <tr>
+                        <th>&nbsp;</th><td style="text-align: right"><input type="text" name="bookname" style="border-radius: 4px;border: thick;height: 20px;" placeholder="输入书籍名称"></td>
+                    </tr>
+                    <tr>
+                        <th></th><th><input type="submit" value="查询" style="border: thin;border-radius: 4px;height: 20px"></th>
+                    </tr>
+                </table>
+                </form>
+            </fieldset>
+        </div>
+        <fieldset style="width: 200px;height: 50px; text-align: center;background-color: #007849;border-radius: 4px">
+            <legend>相关网站</legend>
+            <a href="http://www.baidu.com">百度</a>
+        </fieldset>
+    </div>
+    <div style="height: 20px;width: 770px; margin-left: 250px;"></div>
+    <div style="width: 770px;height: 40px;margin-left: 250px;background-color: #BFD8D2;text-align: center;line-height: 40px;border-radius: 4px 4px 0 0;">
+        <span style="font-size:20px;color: aliceblue"> 通 知 栏</span>
+    </div>
+    <div style="width: 770px;height: 80px;background-color: #fedcd2;margin-left: 250px;margin-bottom: 25px">
+
+    </div>
+    <div style="margin-left: 250px;width: 770px;height: 40px;background-color: #EB6E80;line-height: 40px;text-align: center;border-radius: 4px 4px 0 0"> <span style="font-size: 20px;color: aliceblue">书籍列表</span>
+    </div>
+
+    <div style=" margin-left:250px; background-color:#008f95; width:770px; height: auto;">
+        <table style="border-collapse: collapse;width: 770px">
+            <tr style="border: 1px solid #d9d9d9 ;">
+                <td style="font-size: 20px;color: silver">书名</td>
+                <td style="font-size: 20px;color: silver">作者</td>
+                <td style="font-size: 20px;color: silver">简介</td>
+                <td style="font-size: 20px;color: silver">编号</td>
+                <td style="font-size: 20px;color: silver">操作</td>
+            </tr>
+            <tr th:each="book:${books}">
+                <td th:text="${book.bookname}"></td>
+                <td th:text="${book.author}"></td>
+                <td th:text="${book.description}"></td>
+                <td th:text="${book.number}"></td>
+                <td><a href="">借阅</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<footer th:fragment="footer">
+    <hr/>
+    <p> &copy; CopyRight 西南科技大学
+        Spring Boot微框架 Web App开发组</p>
+</footer>
+</body>
+</html>

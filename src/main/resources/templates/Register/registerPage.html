@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>注册界面</title>
+    <style type="text/css">
+        body{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            font-family: 微软雅黑, "Microsoft Yahei", regular;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            background: url("/images/registerBackground.jpeg");
+            background-size: 100%;
+        }
+        .bgStyle{
+            width: 350px;
+            height: 350px;
+            background-color: #FFFFFF;
+            border-radius: 6px;
+            box-shadow: 0px 0px 6px 3px #aaaaaa;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+        }
+        .titleStyle{
+            height: 60px;
+            background-color: #bbbbbb;
+            border-radius: 6px 6px 0 0;
+            text-align: center;
+            line-height: 60px;
+        }
+        .titleStyle span{
+            font-size: 30px;color: azure;
+        }
+    </style>
+</head>
+<body>
+<div class="bgStyle">
+    <div class="titleStyle">
+        <span>新用户注册</span>
+    </div>
+    <form method="post" th:action="@{/Register/save}" style="height: 200px">
+        <table style="padding-top: 10px">
+            <tr>
+                <th style=" padding-left: 60px">真实姓名:</th>
+                <td style="padding-left: 10px">
+                    <input type="text" name="realname" style="border-radius: 4px;height: 25px;border:0.5px solid #bbbbbb ;">
+                </td>
+            </tr>
+            <tr>
+                <th style="padding-left: 60px;">学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</th>
+                <td style="padding-left: 10px;">
+                    <input type="text" name="schoolnumber" style="border-radius: 4px;height: 25px;border:0.5px solid #bbbbbb ;"/>
+                </td>
+            </tr>
+            <tr>
+                <th style="padding-left: 60px;">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</th>
+                <td style="padding-left: 10px">
+                    <input type="text" name="mailbox" style="border:0.5px solid #bbbbbb ;border-radius: 4px;height: 25px">
+                </td>
+            </tr>
+            <tr>
+                <th style="padding-left: 60px">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称:</th>
+                <td style="padding-left: 10px">
+                    <input type="text" name="username" style="border:0.5px solid #bbbbbb ;border-radius: 4px;height: 25px">
+                </td>
+            </tr>
+            <tr>
+                <th style="padding-left: 60px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</th>
+                <td style="padding-left: 10px">
+                    <input type="text" name="password" style="border:0.5px solid #bbbbbb ;border-radius: 4px;height: 25px">
+                </td>
+            </tr>
+           <!-- <tr>
+                <th style="padding-left: 60px;">确认密码:</th>
+                <td style="padding-left: 10px">
+                    <input type="text" name="Repassword" style="border:0.5px solid #bbbbbb ;border-radius: 4px;height: 25px">
+                </td>
+            </tr>-->
+            <tr>
+                <th style="padding-left: 60px;"></th>
+                <td style="padding-left: 10px;padding-top: 20px;">
+                    <input type="submit" value="提 交" style="width: 100px;height: 30px;border-radius: 6px;border: thin;background-color: aliceblue;border:0.5px solid  #bbbbbb; font-family:微软雅黑, 'Microsoft Yahei', regular;">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+</body>
+</html>

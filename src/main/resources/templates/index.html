@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户登陆</title>
+    <style type="text/css">
+        body{
+            font-family:"Microsoft Yahei";
+            font-size:12px;
+            margin:0;
+            background-size: 100%;
+            background-image: url("/images/login_background.jpeg");
+        }
+        h1{
+            text-align:center;
+            color:#fff;
+            margin: 80px auto 50px -25px;
+            font-size:35px;
+            font-weight: bold;
+            text-shadow: 0px 1px 1px #555;
+        }
+        h1 sup{
+            font-size: 18px;
+            font-style: normal;
+            position: absolute;
+            margin-left: 10px;
+        }
+        .con{
+            border-radius: 8px 8px 8px 8px;
+            width: 28%;
+            height: 20em;
+            margin-top:4em;
+            background-color:#fbfbfb;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .con_title{
+            border-radius: 8px 8px 0px 0px;
+            background-color: #626060;
+            width: auto;
+            height: 3.5em;
+            line-height: 3.5em;
+            text-align: center;
+        }
+        .con_title span{
+            font-family: "微软雅黑";
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #FFF;
+        }
+        .con_input{
+            margin: 2em 0 1em 0;
+        }
+        .con_input span{
+            font-family: "微软雅黑";
+            font-size: 1em;
+            font-weight: bold;
+            color: #333;
+        }
+        .con_input input{
+            width: 15em;
+            border-radius: 4px;
+            padding: 0.5em 1em;
+            border: 1px solid #bbb;
+        }
+        .submit_button{
+            width: 8em;
+            height: 2em;
+            background-color: #928b8b;
+            border-radius: 4px;
+            border: 0px;
+            color: #fff;
+            font-family:"微软雅黑";
+            font-size: 1em;
+            font-weight: bold;
+            margin: 1em 0 1em 0;
+        }
+
+    </style>
+    <script type="text/javascript" language="JavaScript">
+        function Jump() {
+            location.href='Register/registerPage.html'
+            window.event.returnValue = false;
+        }
+    </script>
+</head>
+<body>
+<h1>
+    图书借阅管理系统
+    <sup>V1.0</sup>
+</h1>
+<div class="con" style="text-align: center">
+    <form method="get" th:action="@{/findByUsernameAndPassword}">
+        <div class="con_title">
+            <span>账号登陆</span>
+        </div>
+        <div class="con_input">
+            <input type="text"  placeholder="学号" name="schoolnumber"/>
+        </div>
+        <div class="con_input">
+            <input type="password"  placeholder="密码" name="password">
+        </div>
+        <input type="submit" value="登  陆" class="submit_button"><br/>
+    </form>
+    <a href="/Register/registerPage.html" style="color:#403f48">注册?</a>
+</div>
+</body>
+</html>

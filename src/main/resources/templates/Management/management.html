@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Management</title>
+    <style type="text/css">
+        body{
+            background-image: url("/images/returnBackground.jpeg");
+            background-size: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div style="width: 350px;height: 250px; margin-left: auto;margin-right: auto;background-color:aliceblue;margin-top:160px;border-radius: 6px 6px 0 0;box-shadow: 0px 0px  3px 1px #aaa;border-color: darkgray">
+        <div style="height: 60px;background-color:darkgray;text-align: center;line-height: 60px;border-radius: 6px 6px 0 0">
+            <span style="font-size: 20px;font-family: 微软雅黑;color: aliceblue">还书登记</span>
+        </div>
+        <form method="post" th:action="@{/Management/AddBook}" style="margin-left:90px;margin-top: 40px;">
+            <table>
+                <tr>
+                    <th><input type="text" placeholder="账号" name="schoolnumber" style="height: 20px;text-align: center;border-radius: 4px;border:thin"></th>
+                </tr>
+                <tr>
+                    <th><input type="text" placeholder="书籍名称" name="bookname" style="height: 20px;text-align: center;border-radius: 4px;border: thin"></th>
+                </tr>
+                <tr>
+                    <th><input type="text" placeholder="书籍编码" name="number" style="height: 20px;text-align: center;border-radius: 4px;border: thin"></th>
+                </tr>
+                <tr>
+                    <th style="padding-top:10px"><input type="submit" value="提 交" style="border: thin;border-radius: 4px;height: 20px;width: 60px;background-color: chartreuse;color:slategray;"></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
