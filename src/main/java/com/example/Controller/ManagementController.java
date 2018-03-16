@@ -28,6 +28,6 @@ public class ManagementController {
        Book book=new Book(bookname,author,number, description);
        bookRepository.save(book);
 
-       return "/MainPage/MainPage";
+       return "redirect:/MainPage";
     }
 }

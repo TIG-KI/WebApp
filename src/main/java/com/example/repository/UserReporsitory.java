@@ -3,6 +3,7 @@ package com.example.repository;
 import com.example.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import javax.swing.*;
 import java.util.List;
 
 public interface UserReporsitory extends JpaRepository<User,Long> {
@@ -13,4 +14,5 @@ public interface UserReporsitory extends JpaRepository<User,Long> {
 
      User findUserById(Long id);
     List<User>  findByPasswordAndSchoolnumber(String password,String schoolnumber);
-}
+    User  findUserBySchoolnumber(String schoolnumber);
+ }

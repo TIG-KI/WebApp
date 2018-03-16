@@ -30,7 +30,7 @@
             &nbsp;<a th:href="@{/MainPage/}" style="color: aliceblue">首页</a>
             <a th:href="@{/Management/}" style="color: aliceblue">还书</a>
             <a th:href="@{/About/}" style="color: aliceblue">关于</a>
-            &nbsp; <a href="" style="float: right;color: aliceblue">注销</a>
+            &nbsp; <a th:href="@{/exit/}" style="float: right;color: aliceblue">注销</a>
         </nav>
         <hr>
     </header>
@@ -38,7 +38,6 @@
         <fieldset style="width: 200px;height: 150px; text-align: center;margin-right: 20px;background-color: #FCE000;border-radius: 4px;">
             <legend>个人信息</legend>
             <div style="margin-top: 40px"></div>
-            <span>Null</span>
             <table style="margin-top: 10px">
                 <tr>
                     <th style="padding-left: 30px">借阅数:</th><th>5</th><th>待还数:</th><th>2</th>
@@ -89,7 +88,7 @@
                 <td th:text="${book.author}"></td>
                 <td th:text="${book.description}"></td>
                 <td th:text="${book.number}"></td>
-                <td><a href="">借阅</a></td>
+                <td><a th:href="@{/delete(id=${book.id})}">借阅</a></td>
             </tr>
         </table>
     </div>
